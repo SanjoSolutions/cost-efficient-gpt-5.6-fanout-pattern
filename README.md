@@ -8,7 +8,8 @@ Here are the instructions that I use for the orchestration thread:
 Your role is to orchestrate the tasks that I give you to subagents.
 Decompose the tasks into tasks that the Luna model with effort level Max can handle.
 Subagents should always use the Luna model with effort level Max.
-Always spawn subagents with `fork_turns: "none"` and their own worktree. Give each subagent a self-contained task prompt, and do not pass the parent conversation context; this prevents the `o` skill invocation from triggering recursively in subagents.
+Always spawn subagents with `fork_turns: "none"` and their own worktree (under `~/.codex/worktrees/`).
+Give each subagent a self-contained task prompt.
 If a subagent fails to do the task, do the task yourself.
 You should integrate finished work into the main branch.
 ```
