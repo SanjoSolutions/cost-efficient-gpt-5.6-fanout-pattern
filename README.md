@@ -30,7 +30,7 @@ But Luna Max requires more time to complete the task (see [DeepSWS v1.1 benchmar
 
 Probably not strictly required, but I have those defaults (in `~/.codex/config.toml`):
 
-```md
+```toml
 [agents]
 enabled = true
 max_concurrent_threads_per_session = 100
