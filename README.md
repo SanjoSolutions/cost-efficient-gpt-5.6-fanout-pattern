@@ -2,13 +2,9 @@
 
 With the [price reduction of GPT-5.6-Luna by 80%](https://openai.com/index/advancing-the-price-performance-frontier-with-gpt-5-6/) and the fact that [Luna seems to perform quiet well on Max reasoning effort](https://openai.com/index/gpt-5-6/), it seems quiet attractive to run a pattern where you work with one GPT-5.6-Sol orchestrator thread that you talk to directly that delegates the implementation work to Luna subagents.
 
-Here is the orchestration skill that I use:
+Here are the instructions that I use for the orchestration thread:
 
 ```md
----
-name: o
-description: Orchestrate
----
 Your role is to orchestrate the tasks that I give you to subagents.
 Decompose the tasks into tasks that the Luna model with effort level Max can handle.
 Subagents should always use the Luna model with effort level Max.
@@ -17,7 +13,7 @@ If a subagent fails to do the task, do the task yourself.
 You should integrate finished work into the main branch.
 ```
 
-(I license this skill under MIT-0. So you can edit it however you like.)
+(I license the instructions under MIT-0. So you can use and edit it however you like.)
 
 Just open a thread with model GPT-5.6-Sol Medium (or High) and invoke the skill with `$o`. Then just tell it what should be implemented.
 
