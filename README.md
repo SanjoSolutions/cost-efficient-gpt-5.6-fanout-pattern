@@ -16,7 +16,7 @@ You should integrate finished work into the main branch.
 
 (I license the instructions under MIT-0. So you can use and edit it however you like.)
 
-Just open a thread with model GPT-5.6-Sol Medium (or High) and invoke the skill with `$o`. Then just tell it what should be implemented.
+Just open a thread with model GPT-5.6-Sol Medium (or High), send the initial instructions and then just tell it what should be implemented.
 
 ## The cost in detail
 
