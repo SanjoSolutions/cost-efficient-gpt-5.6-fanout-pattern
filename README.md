@@ -42,9 +42,37 @@ default_subagent_reasoning_effort = "max"
 
 ### Making Luna usable as subagents
 
+#### Option 1: Disable V2 Subagents Feature
+
+Set the following settings in `~/.codex/config.toml`:
+
+```toml
+[features]
+multi_agent = true
+multi_agent_v2= false
+```
+
+#### Option 2: Make Luna appear as v2 model
+
 The last time I checked the ChatGPT App required this:
 
 1. Copy `~/.codex/models_cache.json` to `~/.codex/model-catalog.json`
 2. In `~/.codex/model-catalog.json`: Change "multi_agent_version" for "gpt-5.6-luna" to "v2"
 3. Add the setting `model_catalog_json = "~/.codex/model-catalog.json"` to `~/.codex/config.toml`
 4. Restart ChatGPT App
+
+### Using a model from another provider (i.e. Deepseek V4 Flash)
+
+You can use [OpenCodex](https://github.com/lidge-jun/opencodex) to enable models from different providers at once in ChatGPT App.
+
+After installing it, make sure to do [the following](https://github.com/lidge-jun/opencodex/issues/92#issuecomment-5281132865) to make it work.
+
+In my `~/.codex/AGENTS.md` I have:
+
+```md
+## Optimizing cost via delegation
+
+Always delegate work that is suitable for Deepseek V4 Flash (max) to it to optimize overall cost. This model is on a similar level to Luna (max). Delegate via subagent(s). The model is called `opencode-go/deepseek-v4-flash`. Always use reasoning effort `max` for non-trivial software development tasks. Be aware that this model is less capable than GPT-5.6-Sol, so handle anything complex yourself. If you use it, give it clear and well scoped instructions regarding what it should exactly do.
+```
+
+(MIT-0 licensed)
