@@ -1,5 +1,8 @@
 # Cost Efficient GPT-5.6 Fanout Pattern
 
+> [!NOTE]
+> This pattern might be more money efficient, but not necessarily time efficient. Less capable models like Luna and Deepseek V4 Flash might produce more buggy and/or less refined code than more capable models like Sol. Therefore for more complex, less well defined tasks the more capable model is probably more efficient because it requires less follow ups. Also the suggested instructions might require more fine tuning.
+
 With the [price reduction of GPT-5.6-Luna by 80%](https://openai.com/index/advancing-the-price-performance-frontier-with-gpt-5-6/) and the fact that [Luna seems to perform quiet well on Max reasoning effort](https://openai.com/index/gpt-5-6/), it seems quiet attractive to run a pattern where you work with one GPT-5.6-Sol orchestrator thread that you talk to directly that delegates the implementation work to Luna subagents.
 
 Here are the instructions that I use for the orchestration thread:
@@ -72,7 +75,7 @@ In my `~/.codex/AGENTS.md` I have:
 ```md
 ## Optimizing cost via delegation
 
-Always delegate work that is suitable for Deepseek V4 Flash (max) to it to optimize overall cost. This model is on a similar level to Luna (max). Delegate via subagent(s). The model is called `opencode-go/deepseek-v4-flash`. Always use reasoning effort `max` for non-trivial software development tasks. Be aware that this model is less capable than GPT-5.6-Sol, so handle anything complex yourself. If you use it, give it clear and well scoped instructions regarding what it should exactly do.
+Delegate work that is suitable for Deepseek V4 Flash (max) to it to optimize overall cost. This model is on a similar level to Luna (max). Delegate via subagent(s). The model is called `opencode-go/deepseek-v4-flash`. Always use reasoning effort `max` for non-trivial software development tasks. Be aware that this model is less capable than GPT-5.6-Sol, so handle anything complex yourself. If you use it, give it clear and well scoped instructions regarding what it should exactly do.
 ```
 
 (MIT-0 licensed)
