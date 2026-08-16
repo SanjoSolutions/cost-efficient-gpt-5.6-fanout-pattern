@@ -75,7 +75,12 @@ In my `~/.codex/AGENTS.md` I have:
 ```md
 ## Optimizing cost via delegation
 
-Delegate work that is suitable for Deepseek V4 Flash (max) to it to optimize overall cost. This model is on a similar level to Luna (max). Delegate via subagent(s). The model is called `opencode-go/deepseek-v4-flash`. Always use reasoning effort `max` for non-trivial software development tasks. Be aware that this model is less capable than GPT-5.6-Sol, so handle anything complex yourself. If you use it, give it clear and well scoped instructions regarding what it should exactly do.
+Delegate work that is suitable for Deepseek V4 Flash (max) to it to optimize overall cost.
+This model is on a similar level to Luna (max). Delegate via subagent(s).
+The model is called `opencode-go/deepseek-v4-flash`.
+Always use reasoning effort `max` for non-trivial software development tasks.
+Be aware that this model is less capable than GPT-5.6-Sol, so handle anything complex yourself.
+If you use it, give it clear and well scoped instructions regarding what it should exactly do.
 ```
 
 (MIT-0 licensed)
